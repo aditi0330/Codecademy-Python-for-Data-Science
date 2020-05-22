@@ -1,1 +1,2 @@
 ### Codecademy-Python-for-Data-Science
+#### This repo contains the basics of the python programming environment, including fundamental python programming techniques such as lambdas, reading and manipulating csv files, and the numpy library. It has projects demonstrating data manipulation and cleaning techniques using the popular python data science libraries and introduce the abstraction of the Series and DataFrame as the central data structures for data analysis.
