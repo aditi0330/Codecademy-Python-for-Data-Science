@@ -32,6 +32,16 @@ cart_checkout_rows = len(cart_checkout)
 null_checkout_times = len(cart_checkout[cart_checkout.checkout_time.isnull()])
 print(float(null_checkout_times)/cart_checkout_rows) 
 
+checkout_purchase = pd.merge(checkout, purchase, how = 'left')
+checkout_purchase_rows = len(checkout_purchase)
+null_purchase_times = len(checkout_purchase[checkout_purchase.purchase_time.isnull()])
+print(float(null_purchase_times)/checkout_purchase_rows)
+
 all_data = visits.merge(cart, how = 'left').merge(checkout, how = 'left').merge(purchase, how = 'left')
 print(all_data.head())
 
+all_data['time_to_purchase'] = all_data.purchase_time - all_data.visit_time
+
+print(all_data.time_to_purchase)
+
+print(all_data.time_to_purchase.mean())
