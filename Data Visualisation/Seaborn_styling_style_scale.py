@@ -1,0 +1,36 @@
+sns.set_style("darkgrid")
+sns.stripplot(x="day", y="total_bill", data=tips)
+sns.set_style("dark")
+sns.stripplot(x="day", y="total_bill", data=tips)
+sns.set_style("ticks")
+sns.stripplot(x="day", y="total_bill", data=tips)
+sns.set_style("whitegrid")
+sns.stripplot(x="day", y="total_bill", data=tips)
+sns.set_style("white")
+sns.stripplot(x="day", y="total_bill", data=tips)
+sns.set_style("white")
+sns.stripplot(x="day", y="total_bill", data=tips)
+sns.despine()
+sns.set_style("whitegrid")
+sns.stripplot(x="day", y="total_bill", data=tips)
+sns.despine(left=True, bottom=True)
+sns.set_style("ticks")
+
+# Smallest context:
+sns.set_context("paper")
+sns.stripplot(x="day", y="total_bill", data=tips)
+sns.set_style("ticks")
+
+# Largest Context:
+sns.set_context("poster")
+sns.stripplot(x="day", y="total_bill", data=tips)
+# Set font scale and reduce grid line width to match
+sns.set_context("poster", font_scale = .5, rc={"grid.linewidth": 0.6})
+sns.stripplot(x="day", y="total_bill", data=tips)
+# Set font scale and increase grid line width to match
+sns.set_context("poster", font_scale = 1, rc={"grid.linewidth": 5})
+sns.stripplot(x="day", y="total_bill", data=tips)
+sns.set_style("ticks")
+sns.set_context("poster")
+sns.stripplot(x="day", y="total_bill", data=tips)
+sns.plotting_context()
