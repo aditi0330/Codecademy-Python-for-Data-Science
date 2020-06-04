@@ -24,8 +24,6 @@ except NameError:
   print("You haven't defined songs_q3\n")
   
 #Quantiles
-  from song_data import songs
-import numpy as np
 
 # Define quartiles, deciles, and tenth here:
 quartiles = np.quantile(songs, [0.25, 0.5, 0.75])
@@ -41,4 +39,40 @@ try:
 except NameError:
   print("You haven't defined deciles.\n")
 
-# Interquartile range
+#Interquartile range
+#The interquartile range is the difference between the third quartile (Q3) and the first quartile (Q1). 
+
+q1 = np.quantile(songs, 0.25)
+#Create the variables q3 and interquartile_range here:
+q3 = np.quantile(songs, 0.75)
+interquartile_range = q3 - q1
+# Ignore the code below here
+try:
+  print("The first quartile of the dataset is " + str(q1) + "\n")
+except NameError:
+  print("You haven't defined q1 yet\n")
+  
+try:
+  print("The third quartile of the dataset is " + str(q3) + "\n")
+except NameError:
+  print("You haven't defined q3 yet\n")
+  
+try:
+  print("The IQR of the dataset is " + str(interquartile_range) + "\n")
+except NameError:
+  print("You haven't defined interquartile_range yet\n")
+  
+#Using iqr function
+from song_data import songs
+from scipy.stats import iqr
+
+#Create the variables interquartile_range here:
+interquartile_range = iqr(songs)
+
+# Ignore the code below here
+try:
+  print("The IQR of the dataset is " + str(interquartile_range) + "\n")
+except NameError:
+  print("You haven't defined interquartile_range yet\n")
+  
+#A statistic is robust when outliers have little impact on it.
