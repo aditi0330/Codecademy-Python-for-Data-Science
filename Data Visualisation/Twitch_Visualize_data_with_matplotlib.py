@@ -1,4 +1,4 @@
-
+#Twitch is the leading live streaming platform for gamers.
 from matplotlib import pyplot as plt
 import numpy as np
 import pandas as pd
