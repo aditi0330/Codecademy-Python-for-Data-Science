@@ -149,3 +149,10 @@ acorn_squash_std = np.std(acorn_squash)
 print(pumpkin_std)
 print(acorn_squash_std)
 winner = pumpkin
+
+#Statistics with Numpy
+commutes = np.genfromtxt('commutes.csv', delimiter=',')
+
+# Plot histogram here:
+plt.hist(commutes, bins = 6, range = (20, 50))
+plt.show()
