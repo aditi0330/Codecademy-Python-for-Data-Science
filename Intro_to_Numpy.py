@@ -156,3 +156,75 @@ commutes = np.genfromtxt('commutes.csv', delimiter=',')
 # Plot histogram here:
 plt.hist(commutes, bins = 6, range = (20, 50))
 plt.show()
+
+# Brachiosaurus
+b_data = np.random.normal(6.7, 0.7, size=1000)
+
+# Fictionosaurus
+f_data = np.random.normal(7.7, 0.3, size=1000)
+mystery_dino = 'brachiosaurus'
+answer = False
+plt.hist(b_data,
+         bins=30, range=(5, 8.5), histtype='step',
+         label='Brachiosaurus')
+plt.hist(f_data,
+         bins=30, range=(5, 8.5), histtype='step',
+         label='Fictionosaurus')
+plt.xlabel('Femur Length (ft)')
+plt.legend(loc=2)
+plt.show()
+
+#68% of our samples will fall between +/- 1 standard deviation of the mean
+#95% of our samples will fall between +/- 2 standard deviations of the mean
+#99.7% of our samples will fall between +/- 3 standard deviations of the mean
+one_above = 1000+100
+one_below = 1000-100
+print(one_above)
+print(one_below)
+one_std = 0.68*2000
+
+#Binomial Distribution
+emails = np.random.binomial(500, 0.05, size=10000)
+plt.hist(emails, normed=True)
+plt.show()
+
+emails = np.random.binomial(500, 0.05, size=10000)
+no_emails = np.mean(emails == 0)
+b_test_emails = np.mean(emails == 40)
+print(no_emails)
+print(b_test_emails)
+
+
+sunflowers = np.genfromtxt('sunflower_heights.csv',
+                           delimiter=',')
+
+# Calculate mean and std of sunflowers here:
+sunflowers_mean = np.mean(sunflowers)
+sunflowers_std = np.std(sunflowers)
+
+# Calculate sunflowers_normal here:
+sunflowers_normal = np.random.normal(
+  loc=sunflowers_mean,
+  scale=sunflowers_std,
+  size=5000
+)
+
+plt.hist(sunflowers,
+         range=(11, 15), histtype='step', linewidth=2,
+        label='Observed', normed=True)
+plt.hist(sunflowers_normal,
+         range=(11, 15), histtype='step', linewidth=2,
+        label='Normal', normed=True)
+plt.legend()
+plt.show()
+
+
+# Calculate probabilities here:
+experiments = np.random.binomial(200, 0.1, size=5000)
+prob = np.mean(experiments < 20)
+print(prob)
+
+
+
+
+
