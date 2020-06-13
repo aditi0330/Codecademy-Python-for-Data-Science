@@ -23,3 +23,13 @@
 # regex humou?r matches the characters humo, then either 0 occurrences or 1 occurrence of the letter u, and finally the letter r. 
 # The regex The monkey ate a (rotten)? banana will completely match both The monkey ate a rotten banana and The monkey ate a banana.
 # The regex Aren't owl monkeys beautiful\? will thus completely match the text Aren't owl monkeys beautiful?.
+
+# Kleene star - The regex meo*w will match the characters me, followed by 0 or more os, followed by a w. Thus the regex will match mew, meow, meooow, and meoooooooooooow.
+# Kleene Plus - The regex meo+w will match the characters me, followed by 1 or more os, followed by a w. Thus the regex will match meow, meooow, and meoooooooooooow, but not match mew.
+# The regex My cat is a \* will completely match the text My cat is a *.
+#The anchors hat ^ and dollar sign $ are used to match text at the start and the end of a string, respectively.
+# The regex ^Monkeys: my mortal enemy$ will completely match the text Monkeys: my mortal enemy but not match Spider Monkeys: my mortal enemy in the wild or Squirrel Monkeys: my mortal enemy in the wild.
+# The regex My spider monkey has \$10\^6 in the bank will completely match the text My spider monkey has $10^6 in the bank
+
+
+
