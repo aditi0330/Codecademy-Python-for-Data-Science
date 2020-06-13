@@ -63,3 +63,33 @@ students['gender'] = students.gender_age.str[0]
 students['age'] = students.gender_age.str[1:]
 print(students.head())
 print(students[['full_name', 'grade', 'exam', 'score', 'gender', 'age']])
+
+name_split = students['full_name'].str.split(" ")
+students['first_name'] = name_split.str.get(0)
+students['last_name'] = name_split.str.get(1)
+
+print(students.head())
+
+#to remove percent sign from score
+students.score = students['score'].replace('[\%,]', '', regex=True)
+students.score = pd.to_numeric(students.score)
+
+import numpy as np
+
+print(students)
+print(students.grade.head())
+split_df = students['grade'].str.split('(\d+)', expand=True)
+students.grade = pd.to_numeric(split_df[1])
+print(students.dtypes)
+
+avg_grade = np.mean(students.grade)
+
+print(students)
+
+#bill_df = bill_df.dropna()
+#bill_df = bill_df.dropna(subset=['num_guests'])
+score_mean = np.mean(students.score)
+print(score_mean)
+students['score'] = students['score'].fillna(0)
+score_mean_2 = np.mean(students.score)
+print(score_mean_2)
