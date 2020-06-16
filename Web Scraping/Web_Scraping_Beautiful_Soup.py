@@ -93,3 +93,9 @@ for link in links:
   turtle_data[turtle_name] = []
   
 print(turtle_data)
+
+  stats = turtle.find("ul")
+  stats_text = stats.get_text("|")
+  turtle_data[turtle_name] = stats_text.split("|")
+  
+turtle_df = pd.DataFrame.from_dict(turtle_data, orient='index')
